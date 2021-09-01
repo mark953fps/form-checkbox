@@ -31,6 +31,4 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
-  public labelFormat(i: any): any {}
 }
