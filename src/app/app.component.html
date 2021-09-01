@@ -2,7 +2,8 @@
     <div class="flex-form-checkbox">
         <ng-container *ngFor="let data of dataCheckBox; let i = index;">
             <div class="flex-label">
-                <p-checkbox [name]="data.name" [label]="data.name" (onChange)="onSelectChange($event, i)"></p-checkbox>
+                <p-checkbox [name]="data.name" [label]="data.name" [(ngModel)]="data.isChecked" binary="true"
+                    (onChange)="onSelectChange($event, i)"></p-checkbox>
             </div>
         </ng-container>
     </div>

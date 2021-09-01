@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   dataCheckBox: any = [
-    { id: 1, name: 'checkbox1', isChecked: false },
+    { id: 1, name: 'checkbox1', isChecked: true },
     { id: 2, name: 'checkbox2', isChecked: false },
     { id: 3, name: 'checkbox3', isChecked: false },
     { id: 4, name: 'checkbox4', isChecked: false },
@@ -16,11 +16,11 @@ export class AppComponent implements OnInit {
     { id: 7, name: 'checkbox7', isChecked: false }
   ];
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.dataCheckBox.forEach((data, i) => this.onSelectChange(data, i));
+  }
 
   public onSelectChange(event: any, i: any): void {
-    this.dataCheckBox[i].isChecked = event;
-
     if (this.dataCheckBox[i].isChecked) {
       this.dataCheckBox[i].name = this.dataCheckBox[i].name.split('').join(',');
     } else {
